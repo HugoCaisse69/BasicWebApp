@@ -13,8 +13,19 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "Hugo";
-        } else { // TODO extend the programm here
-            return "";
+        } else if (query.contains("plus")){
+            // We get a list of words
+            String[] words = query.split(" ");
+            int sum =0;
+            for (String word : words){
+                try{
+                int number = Integer.parseInt(word);
+                sum+= number;
+            } catch (Exception e){
+                }
+            }
+            return String.valueOf(sum);
         }
+        return "";
     }
 }
